@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','BerandaController@index');
+// route::get('/fasumum','UmumController@index');
+
+Route::resource('fasumum','UmumController');
