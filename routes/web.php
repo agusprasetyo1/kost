@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/','BerandaController@index');
+Route::get('admin/','BerandaController@index');
 // route::get('/fasumum','UmumController@index');
 
-Route::resource('fasumum','UmumController');
+Route::resource('admin/fasumum','UmumController');
+Route::resource('admin/faskamar', 'KamarController');
+Route::resource('admin/faskamarmandi', 'KamarmandiController');
+Route::resource('admin/lingkungan', 'LingkunganController');

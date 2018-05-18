@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Fas_umum;
+use App\Kamar_mandi;
 
-class UmumController extends Controller
+class KamarmandiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UmumController extends Controller
      */
     public function index()
     {
-        $data['fasumum'] = Fas_umum::all();
-        return view('fas_umum/index', $data);
+        $data['kamarmandi'] = Kamar_mandi::all();
+        return view('fas_kamarmandi/index', $data);
     }
 
     /**
@@ -25,7 +25,7 @@ class UmumController extends Controller
      */
     public function create()
     {
-        return view('fas_umum/create');
+        return view('fas_kamarmandi/create');
     }
 
     /**
@@ -36,10 +36,10 @@ class UmumController extends Controller
      */
     public function store(Request $request)
     {
-        Fas_umum::create([
+        Kamar_mandi::create([
             'fasilitas' => $request->fasilitas
         ]);
-        return redirect("/admin/fasumum/");
+        return redirect('/admin/faskamarmandi/');        
     }
 
     /**
@@ -50,8 +50,8 @@ class UmumController extends Controller
      */
     public function edit($id)
     {
-        $data['fas_umum'] = Fas_umum::find($id);        
-        return view("fas_umum/edit", $data);
+        $data['kamarmandi'] = Kamar_mandi::find($id);
+        return view('fas_kamarmandi/edit', $data);
     }
 
     /**
@@ -63,10 +63,10 @@ class UmumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Fas_umum::find($id)->update([
+        Kamar_mandi::find($id)->update([
             'fasilitas' => $request->fasilitas
         ]);
-        return redirect("/admin/fasumum/");
+        return redirect('/admin/faskamarmandi/');
     }
 
     /**
@@ -77,7 +77,7 @@ class UmumController extends Controller
      */
     public function destroy($id)
     {
-        Fas_umum::destroy($id);
-        return redirect("/admin/fasumum/");
+        Kamar_mandi::destroy($id);
+        return redirect('/admin/faskamarmandi/');        
     }
 }

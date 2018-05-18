@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Fas_umum;
+use App\Fas_kamar;
 
-class UmumController extends Controller
+class KamarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UmumController extends Controller
      */
     public function index()
     {
-        $data['fasumum'] = Fas_umum::all();
-        return view('fas_umum/index', $data);
+        $data['faskamar'] = Fas_kamar::all();
+        return view('fas_kamar/index', $data);
     }
 
     /**
@@ -25,7 +25,7 @@ class UmumController extends Controller
      */
     public function create()
     {
-        return view('fas_umum/create');
+        return view('fas_kamar/create');
     }
 
     /**
@@ -36,10 +36,10 @@ class UmumController extends Controller
      */
     public function store(Request $request)
     {
-        Fas_umum::create([
+        Fas_kamar::create([
             'fasilitas' => $request->fasilitas
         ]);
-        return redirect("/admin/fasumum/");
+        return redirect('/admin/faskamar/');
     }
 
     /**
@@ -50,8 +50,8 @@ class UmumController extends Controller
      */
     public function edit($id)
     {
-        $data['fas_umum'] = Fas_umum::find($id);        
-        return view("fas_umum/edit", $data);
+        $data['faskamar'] = Fas_kamar::find($id);
+        return view('fas_kamar/edit', $data);
     }
 
     /**
@@ -63,10 +63,11 @@ class UmumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Fas_umum::find($id)->update([
+        Fas_kamar::find($id)->update([
             'fasilitas' => $request->fasilitas
         ]);
-        return redirect("/admin/fasumum/");
+
+        return redirect('/admin/faskamar/');
     }
 
     /**
@@ -77,7 +78,7 @@ class UmumController extends Controller
      */
     public function destroy($id)
     {
-        Fas_umum::destroy($id);
-        return redirect("/admin/fasumum/");
+        Fas_kamar::destroy($id);
+        return redirect('/admin/faskamar/');        
     }
 }

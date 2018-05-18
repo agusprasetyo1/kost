@@ -88,7 +88,7 @@
                 <ul class="nav">
                     <li class="nav-title">Theme</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
+                        <a class="nav-link" href="/admin/">
                             <i class="nav-icon icon-speedometer"></i> Beranda</a>
                     </li>
                     <li class="nav-item">
@@ -108,27 +108,23 @@
                             <i class="nav-icon icon-docs"></i> Lainnya </a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="/fasumum">
+                                <a class="nav-link" href="/admin/fasumum/">
                                     <i class="nav-icon icon-basket-loaded"></i> Fasilitas Umum</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/admin/faskamar/">
                                     <i class="nav-icon icon-briefcase"></i> Fasilitas Kamar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon icon-home"></i> Fasilitas Kost</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/admin/faskamarmandi/">
                                     <i class="nav-icon icon-home"></i> Fasilitas Kamar Mandi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/admin/lingkungan/">
                                     <i class="nav-icon icon-map"></i> Akses Lingkungan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/admin/waktu/">
                                     <i class="nav-icon icon-clock"></i> Waktu Harga</a>
                             </li>
                             

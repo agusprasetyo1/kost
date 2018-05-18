@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fas_umum extends Model
+class Fas_kamar extends Model
 {
-    protected $table = 'fas_umum';
-    protected $primaryKey = 'id_fas_umum';
+    protected $table = 'kamar';
+    protected $primaryKey = 'id_kamar';
     protected $fillable = ['fasilitas'];
 }

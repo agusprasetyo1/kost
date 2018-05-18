@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Fas_umum;
+use App\Lingkungan;
 
-class UmumController extends Controller
+class LingkunganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UmumController extends Controller
      */
     public function index()
     {
-        $data['fasumum'] = Fas_umum::all();
-        return view('fas_umum/index', $data);
+        $data['lingkungan'] = Lingkungan::all();
+        return view('lingkungan/index', $data);
     }
 
     /**
@@ -25,7 +25,7 @@ class UmumController extends Controller
      */
     public function create()
     {
-        return view('fas_umum/create');
+        return view('lingkungan/create');
     }
 
     /**
@@ -36,10 +36,10 @@ class UmumController extends Controller
      */
     public function store(Request $request)
     {
-        Fas_umum::create([
-            'fasilitas' => $request->fasilitas
+        Lingkungan::create([
+            'fasilitas' => $request->akses
         ]);
-        return redirect("/admin/fasumum/");
+        return redirect('/admin/lingkungan/');                
     }
 
     /**
@@ -50,8 +50,8 @@ class UmumController extends Controller
      */
     public function edit($id)
     {
-        $data['fas_umum'] = Fas_umum::find($id);        
-        return view("fas_umum/edit", $data);
+        $data['lingkungan'] = Lingkungan::find($id);
+        return view('lingkungan/edit', $data);
     }
 
     /**
@@ -63,10 +63,10 @@ class UmumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Fas_umum::find($id)->update([
-            'fasilitas' => $request->fasilitas
+        Lingkungan::find($id)->update([
+            'fasilitas' => $request->akses
         ]);
-        return redirect("/admin/fasumum/");
+        return redirect('/admin/lingkungan/');                        
     }
 
     /**
@@ -77,7 +77,7 @@ class UmumController extends Controller
      */
     public function destroy($id)
     {
-        Fas_umum::destroy($id);
-        return redirect("/admin/fasumum/");
+        Lingkungan::destroy($id);
+        return redirect('/admin/lingkungan/');                        
     }
 }
